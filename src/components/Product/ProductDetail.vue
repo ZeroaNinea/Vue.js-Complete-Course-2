@@ -16,5 +16,8 @@ console.log(route.params)
     <div v-else>
       <p>X_X No product ID found...</p>
     </div>
+    <div v-if="route.params.categoryId">
+      <p>Category ID: {{ route.params.categoryId }}</p>
+    </div>
   </div>
 </template>
