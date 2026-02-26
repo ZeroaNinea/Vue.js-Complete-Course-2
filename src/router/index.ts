@@ -23,6 +23,10 @@ const router = createRouter({
       path: '/product/',
       component: () => import('../components/Product/ProductDetail.vue'),
     },
+    {
+      path: '/:catchAll(.*)',
+      component: () => import('../components/NotFound/NotFound.vue'),
+    },
   ],
 })
 
