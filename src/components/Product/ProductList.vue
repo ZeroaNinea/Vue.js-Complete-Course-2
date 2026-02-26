@@ -1,19 +1,20 @@
+<script setup lang="ts">
+const products = [
+  { id: 1, name: 'Product 1' },
+  { id: 2, name: 'Product 2' },
+  { id: 3, name: 'Product 3' },
+]
+</script>
+
 <template>
   <div>
     <h1>Product List</h1>
     <p>Here is the list of products:</p>
     <ul>
-      <!-- <li>Product 1</li>
-      <li>Product 2</li>
-      <li>Product 3</li> -->
-      <li>
-        <router-link class="text-success" to="/product/1">Product 1</router-link>
-      </li>
-      <li>
-        <router-link class="text-success" to="/product/2">Product 2</router-link>
-      </li>
-      <li>
-        <router-link class="text-success" to="/product/3">Product 3</router-link>
+      <li v-for="product in products" :key="product.id">
+        <router-link class="text-success" :to="`/product/${product.id}`">{{
+          product.name
+        }}</router-link>
       </li>
     </ul>
   </div>
