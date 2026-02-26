@@ -9,6 +9,12 @@ console.log(route.params)
 <template>
   <div>
     <h1>Product Detail</h1>
-    <p>Product ID: {{ route.params.productId }}</p>
+    <!-- <p>Product ID: {{ route.params.productId }}</p> -->
+    <div v-if="route.params.productId">
+      <p>Product ID: {{ route.params.productId }}</p>
+    </div>
+    <div v-else>
+      <p>X_X No product ID found...</p>
+    </div>
   </div>
 </template>
