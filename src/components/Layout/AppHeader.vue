@@ -21,7 +21,7 @@
           </li>
           <li class="nav-item">
             <!-- <a class="nav-link" href="#">Link</a> -->
-            <router-link class="nav-link" to="/contact">Contact</router-link>
+            <router-link class="nav-link" to="/contact">Contact Us</router-link>
           </li>
           <li class="nav-item dropdown">
             <a
