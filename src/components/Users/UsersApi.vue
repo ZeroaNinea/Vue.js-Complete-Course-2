@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted, reactive } from 'vue'
-import axios from 'axios'
+// import axios from 'axios'
 
 const state: {
   users: {
@@ -17,15 +17,20 @@ const state: {
 })
 
 onMounted(() => {
-  axios
-    .get('https://jsonplaceholder.typicode.com/users')
-    .then((response) => {
-      console.log(response.data)
-      state.users = response.data
+  fetch('https://jsonplaceholder.typicode.com/users')
+    .then((response) => response.json())
+    .then((data) => {
+      state.users = data
     })
-    .catch((error) => {
-      console.log(error)
-    })
+  // axios
+  //   .get('https://jsonplaceholder.typicode.com/users')
+  //   .then((response) => {
+  //     console.log(response.data)
+  //     state.users = response.data
+  //   })
+  //   .catch((error) => {
+  //     console.log(error)
+  //   })
 })
 </script>
 
